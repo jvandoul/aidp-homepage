@@ -20,7 +20,7 @@ This repository hosts an **individual Internet-Draft** under active
 development.
 
 Current version:
-- `draft-vandoulas-aidp-01`
+- `draft-vandoulas-aidp-02`
 
 The draft is not yet associated with an IETF Working Group.
 
