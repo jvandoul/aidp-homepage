@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AIDP — Agent Interaction & Delegation Protocol</title>
+  <meta name="description" content="A protocol for explicit, auditable, and constraint-aware agent delegation." />
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.5}
+    h1{line-height:1.2}
+    .btns a{display:inline-block;margin:6px 10px 6px 0;padding:10px 14px;border:1px solid #111;border-radius:8px;text-decoration:none;color:#111}
+    .btns a:hover{background:#f2f2f2}
+    hr{margin:28px 0}
+    code{background:#f2f2f2;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <h1>AIDP — Agent Intent & Delegation Protocol</h1>
+  <p><strong>A protocol for explicit, auditable, and constraint-aware agent delegation.</strong></p>
+
+  <p>
+    AIDP defines a minimal, transport-agnostic protocol for expressing <em>what an agent is allowed to do</em>,
+    <em>under which constraints</em>, and <em>how failures are observed and handled</em>, when acting on behalf of a user
+    or another agent.
+  </p>
+
+  <div class="btns">
+    <a href="https://datatracker.ietf.org/doc/html/draft-vandoulas-aidp">Read the Internet-Draft</a>
+    <a href="#problem">Problem Statement</a>
+    <a href="#flow">Example Flow</a>
+  </div>
+
+  <hr />
+
+  <h2 id="problem">Problem Statement — Why Agent Delegation Is Currently Unsafe</h2>
+  <ul>
+    <li>No explicit declaration of agent intent</li>
+    <li>No machine-verifiable constraint boundaries</li>
+    <li>Failures are opaque or silently retried</li>
+    <li>No shared semantics for delegation across agents</li>
+    <li>No auditability between autonomous components</li>
+  </ul>
+
+  <h2>What AIDP Introduces</h2>
+  <ul>
+    <li><strong>Explicit Intent</strong> — structured declaration of what is delegated</li>
+    <li><strong>Declared Constraints</strong> — budget/scope/time/policy limits that are observable</li>
+    <li><strong>Execution Boundaries (EB)</strong> — verify compliance before/after execution</li>
+    <li><strong>Observable Outcomes</strong> — success/failure/violation are explicit</li>
+  </ul>
+
+  <h2>What AIDP Is Not</h2>
+  <ul>
+    <li>Not OAuth / authentication / authorization</li>
+    <li>Not tool invocation schemas or APIs</li>
+    <li>Not reasoning frameworks</li>
+    <li>Not model-specific safety techniques</li>
+  </ul>
+
+  <h2 id="flow">Example Flow</h2>
+  <ol>
+    <li>Upstream declares an Intent with explicit constraints</li>
+    <li>Agent submits intent to an Execution Boundary (EB)</li>
+    <li>EB returns an Observation (success / failure / violation)</li>
+    <li>Agent proceeds, retries, or aborts based on the observed outcome</li>
+  </ol>
+
+  <hr />
+
+  <h2>Status & Participation</h2>
+  <p><strong>Specification:</strong> Individual Internet-Draft</p>
+  <p><strong>Feedback:</strong> Critical technical review welcome.</p>
+
+  <p><strong>Internet-Draft:</strong> <a href="https://datatracker.ietf.org/doc/html/draft-vandoulas-aidp">draft-vandoulas-aidp</a></p>
+</body>
+</html>
